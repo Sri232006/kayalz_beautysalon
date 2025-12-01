@@ -15,7 +15,7 @@
 /* -------- Header Main Updated -------- */
 .header-main {
   display: flex;
-  justify-content: flex-end;     /* Logo center la irukum, so menu right ku pogum */
+  justify-content: flex-end;     
   align-items: center;
   position: relative;
 }
@@ -24,7 +24,7 @@
 .brand-logo {
   width: 800px;
   display: block;
-  margin: 40px auto 10px auto;     /* 20 → 40 (logo mela space), contact bar thooram aagum */
+  margin: 40px auto 10px auto;     
   filter: drop-shadow(0 0 12px #ff9bf9);
 }
 
@@ -42,7 +42,7 @@
   background: rgba(255, 255, 255, 0.15);
   padding: 12px;
   border-radius: 12px;
-  margin-top: 25px;                /* Contact bar gap increased */
+  margin-top: 25px;                
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
@@ -106,7 +106,7 @@
   height: 65px;
   background: linear-gradient(to bottom, #b24fff, #6a00ff);
   border-radius: 50%;
-  margin: 50px auto;              /* spaced down */
+  margin: 50px auto;              
   display: flex;
   justify-content: center;
   align-items: center;
