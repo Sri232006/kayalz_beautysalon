@@ -1,4 +1,5 @@
 import React from "react";
+import kayalzLogo from "../assets/kayalzlogo.jpg";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -7,7 +8,7 @@ const Dashboard = () => {
 
       {/* --------- Header Top --------- */}
       <div className="header-main">
-        <h1 className="logo-text">KAYALZ BEAUTY</h1>
+        <img src={kayalzLogo} alt="Brand Logo" className="brand-logo" />
         <div className="menu-icon">⋮</div>
       </div>
 
