@@ -1,19 +1,30 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import kayalzLogo from "../assets/kayalzlogo.jpg";
 import "./Dashboard.css";
 import ReviewModal from "./ReviewModal";
+import WorkersPage from "./WorkerPage";
+import OffersModal from "./OfferModal";
+
 
 const Dashboard = () => {
-  const navigate = useNavigate();
   const [reviews, setReviews] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
 
-  
+  // Workers Page state
+  const [showWorkers, setShowWorkers] = useState(false);
+
+  // Offers Modal state
+  const [showOffers, setShowOffers] = useState(false);   // ✅ NEW STATE
+
   const addReview = (newReview) => {
     setReviews((prevReviews) => [newReview, ...prevReviews]);
     setModalOpen(false);
   };
+
+  // Show Workers page
+  if (showWorkers) {
+    return <WorkersPage />;
+  }
 
   return (
     <div className="dashboard-page">
@@ -36,43 +47,62 @@ const Dashboard = () => {
         IN YOUR <span>LIFESTYLE</span>
       </h2>
 
-      {/* Features */}
+      {/* Features Section */}
       <div className="features-section">
-        <div className="feature-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" className="icon-img" />
+
+        {/* OFFERS CARD — Opens Modal */}
+        <div
+          className="feature-card"
+          onClick={() => setShowOffers(true)}   // ✅ OPEN MODAL
+          style={{ cursor: "pointer" }}
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"
+            className="icon-img"
+          />
           <h2>Offers</h2>
-          <p>Exclusive deals and special packages designed for our valued clients</p>
+          <p>Exclusive combo deals and special packages</p>
         </div>
 
-        <div className="feature-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" className="icon-img" />
+        {/* Slots Available → Workers Page */}
+        <div
+          className="feature-card"
+          onClick={() => setShowWorkers(true)}
+          style={{ cursor: "pointer" }}
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png"
+            className="icon-img"
+          />
           <h2>Slots Available</h2>
           <p>Book your perfect time with our flexible scheduling system</p>
         </div>
 
         <div className="feature-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" className="icon-img" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/992/992700.png"
+            className="icon-img"
+          />
           <h2>Sunday Evening Free</h2>
-          <p>Special weekend availability for your convenience and relaxation</p>
+          <p>Special weekend availability for your convenience</p>
         </div>
 
         <div className="feature-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3176/3176365.png" className="icon-img" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3176/3176365.png"
+            className="icon-img"
+          />
           <h2>Luxury Slots</h2>
-          <p>Premium experiences with personalized attention and care</p>
+          <p>Premium experiences with personalized care</p>
         </div>
       </div>
-
-      {/* Worker Page Button */}
-      <button className="worker-btn" onClick={() => navigate("/workers")}>
-        👥 View Workers
-      </button>
 
       {/* Plus Button to Add Review */}
       <div className="plus-btn" onClick={() => setModalOpen(true)}>+</div>
 
-      {/* Client Reviews */}
+      {/* Client Reviews Section */}
       <h1 className="review-heading">CLIENT REVIEWS</h1>
+
       <div className="review-container">
         {reviews.length === 0 ? (
           <p className="no-reviews">No reviews yet. Click + to add one!</p>
@@ -81,7 +111,12 @@ const Dashboard = () => {
             <div key={i} className="review-card">
               <div className="star-container">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <span key={star} className={star <= r.rating ? "star filled" : "star"}>★</span>
+                  <span
+                    key={star}
+                    className={star <= r.rating ? "star filled" : "star"}
+                  >
+                    ★
+                  </span>
                 ))}
               </div>
               <h3>{r.name}</h3>
@@ -93,10 +128,15 @@ const Dashboard = () => {
 
       {/* Review Modal */}
       {isModalOpen && (
-        <ReviewModal 
+        <ReviewModal
           onClose={() => setModalOpen(false)}
           onSubmit={addReview}
         />
+      )}
+
+      {/* OFFERS MODAL — NEW */}
+      {showOffers && (
+        <OffersModal onClose={() => setShowOffers(false)} />
       )}
     </div>
   );
