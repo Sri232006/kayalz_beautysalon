@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import kayalzLogo from "../assets/kayalzlogo.jpg";
 import "./Dashboard.css";
+import ReviewModal from "./ReviewModal";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+
+  // Store client reviews
+  const [reviews, setReviews] = useState([]);
+
+  // Modal open/close controller
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  // Handle new review add
+  const addReview = (newReview) => {
+    setReviews([newReview, ...reviews]);
+    setModalOpen(false);
+  };
 
   return (
     <div className="dashboard-page">
@@ -15,7 +28,7 @@ const Dashboard = () => {
         <div className="menu-icon">⋮</div>
       </div>
 
-      {/* --------- Header Contact Bar --------- */}
+      {/* Contact Bar */}
       <div className="contact-bar">
         <div className="contact-item">📞 +1 934 303 4865</div>
         <div className="contact-item">✉ hello@kayalzbeauty.com</div>
@@ -28,7 +41,7 @@ const Dashboard = () => {
         IN YOUR <span>LIFESTYLE</span>
       </h2>
 
-      {/* ------- Features Section -------- */}
+      {/* Features */}
       <div className="features-section">
 
         <div className="feature-card">
@@ -56,35 +69,38 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* --------- NEW WORKER PAGE BUTTON --------- */}
-      <button
-        className="worker-btn"
-        onClick={() => navigate("/workers")}
-      >
+      {/* Worker Page Button */}
+      <button className="worker-btn" onClick={() => navigate("/workers")}>
         👥 View Workers
       </button>
 
-      {/* Add Button (DON'T TOUCH) */}
-      <div className="plus-btn">+</div>
+      {/* Plus Button to Add Review */}
+      <div className="plus-btn" onClick={() => setModalOpen(true)}>+</div>
 
       {/* Client Reviews */}
       <h1 className="review-heading">CLIENT REVIEWS</h1>
 
       <div className="review-container">
-
-        <div className="review-card">
-          <div className="review-icon">✨✨</div>
-          <h3>Olivia corner</h3>
-          <p>Special weekend availability for your convenience and relaxation</p>
-        </div>
-
-        <div className="review-card">
-          <div className="review-icon">✨✨</div>
-          <h3>David ralph</h3>
-          <p>Special weekend availability for your convenience and relaxation</p>
-        </div>
-
+        {reviews.length === 0 ? (
+          <p className="no-reviews">No reviews yet. Click + to add one!</p>
+        ) : (
+          reviews.map((r, i) => (
+            <div key={i} className="review-card">
+              <div className="review-icon">{("⭐").repeat(r.rating)}</div>
+              <h3>{r.name}</h3>
+              <p>{r.message}</p>
+            </div>
+          ))
+        )}
       </div>
+
+      {/* Review Modal */}
+      {isModalOpen && (
+        <ReviewModal 
+          onClose={() => setModalOpen(false)}
+          onSubmit={addReview}
+        />
+      )}
 
     </div>
   );
