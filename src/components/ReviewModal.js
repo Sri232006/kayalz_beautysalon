@@ -45,13 +45,17 @@ const ReviewModal = ({ onClose, onSubmit }) => {
           onChange={(e) => setReview(e.target.value)}
         ></textarea>
 
-        <button className="submit-btn" onClick={handleSubmit}>
-          Submit Review
-        </button>
+        {/* BUTTON ROW WRAPPER */}
+        <div className="button-row">
+          <button className="submit-btn" onClick={handleSubmit}>
+            Submit Review
+          </button>
 
-        <button className="cancel-btn" onClick={onClose}>
-          Cancel
-        </button>
+          <button className="cancel-btn" onClick={onClose}>
+            Cancel
+          </button>
+        </div>
+
       </div>
     </div>
   );

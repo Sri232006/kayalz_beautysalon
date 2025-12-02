@@ -23,10 +23,10 @@
   box-shadow: 0 6px 25px rgba(0,0,0,0.4);
   animation: popup 0.3s ease;
 
-  display: flex;               
-  flex-direction: column;      
-  align-items: center;         
-  gap: 12px;                   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 /* Background image */
@@ -49,12 +49,20 @@
   background: rgba(255,255,255,0.5);
   border: none;
   font-size: 15px;
-  margin: 0 auto;     
+  margin: 0 auto;
+}
+
+/* ⭐ NEW BUTTON ROW ALIGNMENT */
+.button-row {
+  width: 90%;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
 }
 
 /* Buttons  */
 .submit-btn, .cancel-btn {
-  width: 90%;        
+  flex: 1;        /* Makes both buttons equal width */
   padding: 12px;
   border: none;
   border-radius: 10px;
@@ -64,25 +72,14 @@
 
 /* Colors */
 .submit-btn {
-  width: 90%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
   color: #000;
   font-weight: 700;
-  font-size: 16px;
   background: linear-gradient(135deg, #f6d365, #fda085);
   box-shadow: 0 4px 10px rgba(253, 160, 133, 0.5);
 }
 
 .cancel-btn {
-  width: 90%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
   color: white;
-  font-weight: 600;
-  font-size: 16px;
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(3px);
   border: 1px solid rgba(255,255,255,0.4);

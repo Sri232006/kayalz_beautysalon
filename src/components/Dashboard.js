@@ -6,23 +6,18 @@ import ReviewModal from "./ReviewModal";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-
-  // Store client reviews
   const [reviews, setReviews] = useState([]);
-
-  // Modal open/close controller
   const [isModalOpen, setModalOpen] = useState(false);
 
-  // Handle new review add
+  
   const addReview = (newReview) => {
-    setReviews([newReview, ...reviews]);
+    setReviews((prevReviews) => [newReview, ...prevReviews]);
     setModalOpen(false);
   };
 
   return (
     <div className="dashboard-page">
-
-      {/* --------- Header Top --------- */}
+      {/* Header */}
       <div className="header-main">
         <img src={kayalzLogo} alt="Brand Logo" className="brand-logo" />
         <div className="menu-icon">⋮</div>
@@ -43,7 +38,6 @@ const Dashboard = () => {
 
       {/* Features */}
       <div className="features-section">
-
         <div className="feature-card">
           <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" className="icon-img" />
           <h2>Offers</h2>
@@ -79,14 +73,17 @@ const Dashboard = () => {
 
       {/* Client Reviews */}
       <h1 className="review-heading">CLIENT REVIEWS</h1>
-
       <div className="review-container">
         {reviews.length === 0 ? (
           <p className="no-reviews">No reviews yet. Click + to add one!</p>
         ) : (
           reviews.map((r, i) => (
             <div key={i} className="review-card">
-              <div className="review-icon">{("⭐").repeat(r.rating)}</div>
+              <div className="star-container">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <span key={star} className={star <= r.rating ? "star filled" : "star"}>★</span>
+                ))}
+              </div>
               <h3>{r.name}</h3>
               <p>{r.review}</p>
             </div>
@@ -101,7 +98,6 @@ const Dashboard = () => {
           onSubmit={addReview}
         />
       )}
-
     </div>
   );
 };
