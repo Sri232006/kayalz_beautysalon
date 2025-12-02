@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import kayalzLogo from "../assets/kayalzlogo.jpg";
 import "./Dashboard.css";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="dashboard-page">
 
@@ -53,7 +56,15 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Add Button */}
+      {/* --------- NEW WORKER PAGE BUTTON --------- */}
+      <button
+        className="worker-btn"
+        onClick={() => navigate("/workers")}
+      >
+        👥 View Workers
+      </button>
+
+      {/* Add Button (DON'T TOUCH) */}
       <div className="plus-btn">+</div>
 
       {/* Client Reviews */}
