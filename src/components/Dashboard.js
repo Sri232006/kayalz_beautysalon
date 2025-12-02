@@ -50,10 +50,10 @@ const Dashboard = () => {
       {/* Features Section */}
       <div className="features-section">
 
-        {/* OFFERS CARD — Opens Modal */}
+        {/* OFFERS CARD  */}
         <div
           className="feature-card"
-          onClick={() => setShowOffers(true)}   // ✅ OPEN MODAL
+          onClick={() => setShowOffers(true)}   
           style={{ cursor: "pointer" }}
         >
           <img
@@ -64,7 +64,7 @@ const Dashboard = () => {
           <p>Exclusive combo deals and special packages</p>
         </div>
 
-        {/* Slots Available → Workers Page */}
+        {/* Slots Available  */}
         <div
           className="feature-card"
           onClick={() => setShowWorkers(true)}
