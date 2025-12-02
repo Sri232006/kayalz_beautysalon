@@ -88,7 +88,7 @@ const Dashboard = () => {
             <div key={i} className="review-card">
               <div className="review-icon">{("⭐").repeat(r.rating)}</div>
               <h3>{r.name}</h3>
-              <p>{r.message}</p>
+              <p>{r.review}</p>
             </div>
           ))
         )}
