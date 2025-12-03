@@ -10,13 +10,25 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    if (email && password) {
+  if (email && password) {
+
+    
+    if (email === "admin@gmail.com" && password === "123456") {
+      localStorage.setItem("role", "admin");
       localStorage.setItem("auth", "true");
-      navigate("/dashboard");
-    } else {
-      alert("Please enter Email & Password");
+      navigate("/admin/dashboard");  
+    } 
+    else {
+      
+      localStorage.setItem("role", "user");
+      localStorage.setItem("auth", "true");
+      navigate("/dashboard");        
     }
-  };
+
+  } else {
+    alert("Please enter Email & Password");
+  }
+};
 
   return (
     <div className="login-container">
