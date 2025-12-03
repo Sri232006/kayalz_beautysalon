@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = () => {
     if (email && password) {
       localStorage.setItem("auth", "true");
-      navigate("/dashboard");
+      navigate("/Homepage");
     } else {
       alert("Please enter Email & Password");
     }

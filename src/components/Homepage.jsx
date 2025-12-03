@@ -1,10 +1,10 @@
 import React from "react";
 import kayalzLogo from "../assets/kayalzlogo.jpg";
-import "./Dashboard.css";
+import "./Homepage.css";
 
-const Dashboard = () => {
+const Homepage = () => {
   return (
-    <div className="dashboard-page">
+    <div className="Homepage-page">
 
       {/* --------- Header Top --------- */}
       <div className="header-main">
@@ -79,4 +79,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Homepage;
