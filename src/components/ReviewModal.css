@@ -52,7 +52,7 @@
   margin: 0 auto;
 }
 
-/* ⭐ NEW BUTTON ROW ALIGNMENT */
+
 .button-row {
   width: 90%;
   display: flex;
@@ -62,7 +62,7 @@
 
 /* Buttons  */
 .submit-btn, .cancel-btn {
-  flex: 1;        /* Makes both buttons equal width */
+  flex: 1;        
   padding: 12px;
   border: none;
   border-radius: 10px;

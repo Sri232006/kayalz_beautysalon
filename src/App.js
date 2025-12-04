@@ -6,7 +6,7 @@ import AdminDashboard from "./admin/AdminDashboard";
 import AdminRoute from "./utils/AdminRoute";
 import AnalyticsPage from "./admin/AnalyticsPage";
 import EmployeeOverview from "./admin/EmployeeOverview";
-import ServiceTransactions from "./admin/ServiceTransactions";  // ⭐ NEW
+import ServiceTransactions from "./admin/ServiceTransactions";  
 
 function App() {
   return (
@@ -51,7 +51,7 @@ function App() {
           }
         />
 
-        {/* ⭐ Admin Service Transactions */}
+        {/*  Admin Service Transactions */}
         <Route
           path="/admin/service-transactions"
           element={

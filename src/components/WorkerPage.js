@@ -4,7 +4,7 @@ import bgImage from "../assets/bg-salon.jpg";
 import worker1 from "../assets/worker1.jpg";
 import worker2 from "../assets/worker2.jpg";
 import worker3 from "../assets/worker3.jpg";
-import TimeSlotModal from "./TimeSlotModal"; // Import the time picker modal
+import TimeSlotModal from "./TimeSlotModal"; 
 
 const workers = [
   {
@@ -88,8 +88,8 @@ const workers = [
 ];
 
 export default function WorkerPage() {
-  const [selected, setSelected] = useState(null);        // Selected worker
-  const [selectedService, setSelectedService] = useState(null); // Selected service for time picker
+  const [selected, setSelected] = useState(null);        
+  const [selectedService, setSelectedService] = useState(null); 
 
   return (
     <div className="worker-page" style={{ backgroundImage: `url(${bgImage})` }}>
@@ -124,7 +124,7 @@ export default function WorkerPage() {
                 <button
                   key={i}
                   className="service-button"
-                  onClick={() => setSelectedService(s)} // Open TimeSlotModal
+                  onClick={() => setSelectedService(s)} 
                 >
                   {s}
                 </button>
@@ -142,7 +142,7 @@ export default function WorkerPage() {
           onConfirm={(time) => {
             alert(`Booked ${selectedService} at ${time}`);
             setSelectedService(null);
-            setSelected(null); // Close worker modal too
+            setSelected(null); 
           }}
         />
       )}

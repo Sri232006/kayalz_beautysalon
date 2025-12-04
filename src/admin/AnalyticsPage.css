@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Michroma&display=swap');
 
-/* MAIN PAGE CONTAINER */
 .analytics-container {
   padding: 30px;
   color: white;
   min-height: 100vh;
 
-  /* 🔥 Background Image Added (NO THEME CHANGE) */
+  
   background: url("../assets/bg-salon.jpg") no-repeat center/cover;
   background-attachment: fixed;
 
@@ -21,7 +20,7 @@
   text-shadow: 0 0 12px rgba(255, 0, 200, 0.7);
 }
 
-/* GRID LAYOUT - 2 COLUMNS */
+/* GRID LAYOUT  */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -36,7 +35,7 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
-  /* Neon Glow */
+  
   box-shadow: 0 0 20px rgba(200, 0, 255, 0.25);
   backdrop-filter: blur(8px);
 }

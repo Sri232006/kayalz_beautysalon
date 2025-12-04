@@ -78,10 +78,10 @@
   padding: 25px;
   max-height: 85vh;
   overflow-y: auto;
-  font-family: 'Poppins', sans-serif; /* neat font for modal */
+  font-family: 'Poppins', sans-serif; 
   color: white;
 
-  /* Glass effect + background */
+  
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);

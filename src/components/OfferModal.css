@@ -1,4 +1,4 @@
-/* FULL SCREEN OVERLAY */
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 
 .offers-modal-overlay {
@@ -8,20 +8,20 @@
   width: 100%;
   height: 100%;
 
-  /* 🔥 Background Image Here */
+  
   background: url("../assets/bg-salon.jpg")
     no-repeat center center/cover;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(3px); /* light blur */
+  backdrop-filter: blur(3px); 
   z-index: 999;
 }
 
 /* MODAL BOX */
 .offers-modal {
-  background: rgba(255, 255, 255, 0.15); /* Transparent glass */
+  background: rgba(255, 255, 255, 0.15); 
   padding: 20px;
   width: 90%;
   max-width: 380px;
