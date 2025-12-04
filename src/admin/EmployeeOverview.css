@@ -1,0 +1,108 @@
+.overview-container {
+  padding: 30px;
+  color: white;
+  min-height: 100vh;
+
+  /* 🔥 Background Image Added (Theme remains same) */
+  background: url("../assets/bg-salon.jpg") no-repeat center/cover;
+  background-attachment: fixed;
+
+  font-family: "Michroma", sans-serif;
+  backdrop-filter: blur(6px);
+}
+
+/* PAGE TITLE */
+.page-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-family: "Cinzel", serif;
+  text-shadow: 0 0 12px rgba(255, 0, 200, 0.7);
+  letter-spacing: 1px;
+}
+
+/* EMPLOYEE GRID */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* EMPLOYEE CARD */
+.employee-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 0 25px rgba(200, 0, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: 0.3s ease;
+}
+
+.employee-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(255, 0, 255, 0.45);
+}
+
+/* EMPLOYEE HEADER */
+.emp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* EMPLOYEE IMAGE */
+.emp-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #fff;
+}
+
+/* STATUS BADGE */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.available {
+  background: #00c851;
+  color: white;
+}
+
+.busy {
+  background: #ffbb33;
+  color: black;
+}
+
+/* EMPLOYEE STATS */
+.stats {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.stats span {
+  color: #ff79f7;
+  font-weight: bold;
+}
+
+/* RANKING BAR */
+.ranking {
+  margin-top: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 8px;
+  background: #d500f9;
+  border-radius: 10px;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import googleLogo from "../assets/googlelogo.jpg";
+import googleLogo from "../assets/g_logo1.jpg";
 import "./Login.css";
 
 const Login = () => {

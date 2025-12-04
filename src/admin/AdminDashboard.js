@@ -1,6 +1,7 @@
 import React from "react";
 import kayalzLogo from "../assets/kayalzlogo.jpg";
 import "./AdminDashboard.css";
+import AdminOptionSlider from "./AdminOptionSlider";   
 
 const AdminDashboard = () => {
   return (
@@ -9,7 +10,7 @@ const AdminDashboard = () => {
       {/* ===== TOP HEADER ===== */}
       <div className="top-header">
 
-        {/* LEFT LOGO ONLY */}
+        {/* LEFT LOGO */}
         <div className="left-brand">
           <img src={kayalzLogo} alt="brand" className="brand-logo-big" />
         </div>
@@ -24,6 +25,9 @@ const AdminDashboard = () => {
 
       {/* ===== ADMIN DASHBOARD TITLE ===== */}
       <h1 className="admin-title">Admin Dashboard</h1>
+
+      {/*  SWIPE OPTIONS  (3 cards slide) */}
+      <AdminOptionSlider />
 
       {/* ===== Dashboard Overview ===== */}
       <h2 className="section-title">Dashboard Overview</h2>

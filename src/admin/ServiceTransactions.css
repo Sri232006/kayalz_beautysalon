@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Michroma&display=swap');
+
+.transactions-container {
+  padding: 30px;
+  min-height: 100vh;
+  color: white;
+
+  background: url("../assets/bg-salon.jpg") no-repeat center/cover;
+  background-attachment: fixed;
+  font-family: "Michroma", sans-serif;
+}
+
+.page-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: "Cinzel", serif;
+  text-shadow: 0 0 10px rgba(255, 0, 200, 0.7);
+}
+
+.transactions-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(200, 0, 255, 0.25);
+}
+
+.table-title {
+  font-family: "Cinzel", serif;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.service-table th {
+  text-align: left;
+  padding: 12px;
+  opacity: 0.8;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.service-table td {
+  padding: 14px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Status Colours */
+.status-paid {
+  color: #34ff57;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #ffcc00;
+  font-weight: 600;
+}
