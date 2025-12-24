@@ -11,8 +11,15 @@ const Login = () => {
 
   const handleLogin = () => {
     if (email && password) {
-      localStorage.setItem("auth", "true");
-      navigate("/Homepage");
+      if (email === "admin@gmail.com" && password === "123456") {
+        localStorage.setItem("role", "admin");
+        localStorage.setItem("auth", "true");
+        navigate("/Homepage");  
+      } else {
+        localStorage.setItem("role", "user");
+        localStorage.setItem("auth", "true");
+        navigate("/Homepage");        
+      }
     } else {
       alert("Please enter Email & Password");
     }
@@ -24,7 +31,7 @@ const Login = () => {
       <div className="login-box">
         <h2 className="title">SIGN IN</h2>
 
-        <button className="google-btn">
+        <button className="google-btn" onClick={() => alert('Google login coming soon!')}>
   <img src={googleLogo} alt="google" />
   Continue with Google
 </button>
@@ -49,7 +56,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="login-btn" onClick={handleLogin}>
+        <button className="sign-btn" onClick={handleLogin}>
           Log in
         </button>
       </div>

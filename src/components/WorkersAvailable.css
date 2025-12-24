@@ -1,0 +1,90 @@
+
+/* ===== WORKERS ===== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* 🔥 Background Image Here */
+ 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px); /* light blur */
+  z-index: 999;
+}
+
+/* MODAL BOX */
+.modal-content{
+  background: rgba(158, 50, 147, 0.341); /* Transparent glass */
+  padding: 20px;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  animation: pop 0.3s ease-in-out;
+}
+
+/* Animation */
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* TITLE */
+.worker-title {
+  font-family: 'Michroma';
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+
+.worker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.worker-card {
+  background:rgba(62, 5, 60, 0.923) ;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.worker-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.worker-card h3 {
+  margin: 10px 0;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.status.available {
+  background: #2ecc71;
+  color: #000;
+}
+
+.status.busy {
+  background: #e74c3c;
+  color: #fff;
+}
