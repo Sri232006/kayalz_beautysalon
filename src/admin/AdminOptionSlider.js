@@ -1,50 +1,42 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
+import "./AdminDashboard.css";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "./AdminDashboard";
-
-export default function AdminOptionSlider() {
+const AdminOptionSlider = () => {
   const navigate = useNavigate();
+
+  const options = [
+    {
+      title: "Analytics",
+      route: "/admin/analytics",
+      color: "#8e2de2",
+    },
+    {
+      title: "Employee Overview",
+      route: "/admin/employee-overview",
+      color: "#ff416c",
+    },
+    {
+      title: "Service Transactions",
+      route: "/admin/service-transactions",
+      color: "#1fa2ff",
+    },
+  ];
 
   return (
     <div className="admin-option-slider">
-      <Swiper
-        modules={[Pagination]}
-        slidesPerView={1.2}
-        spaceBetween={20}
-        pagination={{ clickable: true }}
-      >
-        <SwiperSlide>
-          <div
-            className="option-card"
-            onClick={() => navigate("/admin/analytics")}
-          >
-            <h3>Analytics & Performance</h3>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div
-            className="option-card"
-            onClick={() => navigate("/admin/employee-overview")}
-          >
-            <h3>Employee Overview</h3>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div
-            className="option-card"
-            onClick={() => navigate("/admin/service-transactions")}
-          >
-            <h3>Service Transactions</h3>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+      {options.map((opt, index) => (
+        <div
+          key={index}
+          className="option-card"
+          style={{ background: opt.color }}
+          onClick={() => navigate(opt.route)}
+        >
+          {opt.title}
+        </div>
+      ))}
     </div>
   );
-}
+};
+
+export default AdminOptionSlider;

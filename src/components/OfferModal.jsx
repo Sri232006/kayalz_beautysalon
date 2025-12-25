@@ -10,17 +10,16 @@ const OffersModal = ({ onClose }) => {
   ];
 
   return (
-    <div className="offers-modal-overlay">
-      <div className="offers-modal">
-
-        <h2 className="offers-title">💝 Combo Offers</h2>
+    <div className="offers-modal-overlay" onClick={onClose}>
+      <div className="offers-modal" onClick={(e) => e.stopPropagation()}>
+        <h2 className="offer-title">💝 Combo Offers</h2>
 
         <div className="offers-list">
           {offers.map((offer, index) => (
             <div key={index} className="offer-card">
               <h3>{offer.title}</h3>
               <p>{offer.desc}</p>
-              <span className="price">{offer.price}</span>
+              <span className="offer-price">{offer.price}</span>
             </div>
           ))}
         </div>

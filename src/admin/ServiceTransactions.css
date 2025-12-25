@@ -7,9 +7,11 @@
 
   background: url("../assets/bg-salon.jpg") no-repeat center/cover;
   background-attachment: fixed;
+
   font-family: "Michroma", sans-serif;
 }
 
+/* PAGE TITLE */
 .page-title {
   font-size: 30px;
   margin-bottom: 20px;
@@ -17,21 +19,25 @@
   text-shadow: 0 0 10px rgba(255, 0, 200, 0.7);
 }
 
+/* TRANSACTION CARD */
 .transactions-card {
   background: rgba(255, 255, 255, 0.06);
   padding: 25px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.15);
+
   backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(200, 0, 255, 0.25);
 }
 
+/* TABLE TITLE */
 .table-title {
   font-family: "Cinzel", serif;
   font-size: 20px;
   margin-bottom: 18px;
 }
 
+/* TABLE */
 .service-table {
   width: 100%;
   border-collapse: collapse;
@@ -50,7 +56,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Status Colours */
+/* STATUS COLORS */
 .status-paid {
   color: #34ff57;
   font-weight: 600;

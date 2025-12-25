@@ -1,0 +1,117 @@
+.booking-container {
+  width: 90%;
+  margin: 40px auto;
+  padding: 35px 50px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.book-input-box {
+  width: 100%;
+  padding: 13px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(58, 54, 54);
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid whitesmoke;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.select-text {
+  margin: 20px 0 10px;
+  font-size: 20px;
+}
+
+.employee-list {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-bottom: 25px;
+}
+
+.employee-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  width: 140px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid rgb(208, 75, 192);
+}
+
+.employee-card:hover {
+  transform: scale(1.05);
+}
+
+.employee-card.active {
+  border-color: #ff4fd8;
+  background: rgba(255, 0, 128, 0.2);
+}
+
+.emp-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.emp-name {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.preview-box {
+  margin-top: 25px;
+ 
+  width: 600px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 18px 50px;
+  line-height: 60px;
+  border-radius: 12px;
+  
+}
+
+.preview-box h3{
+    color: #ff4fd8;
+}
+.confirm-btn {
+  width: 350px;
+  padding: 14px;
+  background: linear-gradient(90deg, #931767, #bd3692);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: "Michroma";
+  font-size: 18px;
+  margin-top: 30px;
+
+  transition: 0.3s;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+.confirm-btn:hover {
+  transform: scale(1.03);
+}
+
+.time-input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid whitesmoke;
+  outline: none;
+}

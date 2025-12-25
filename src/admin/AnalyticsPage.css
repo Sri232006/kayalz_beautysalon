@@ -5,7 +5,6 @@
   color: white;
   min-height: 100vh;
 
-  
   background: url("../assets/bg-salon.jpg") no-repeat center/cover;
   background-attachment: fixed;
 
@@ -20,7 +19,7 @@
   text-shadow: 0 0 12px rgba(255, 0, 200, 0.7);
 }
 
-/* GRID LAYOUT  */
+/* GRID LAYOUT */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -35,7 +34,6 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
-  
   box-shadow: 0 0 20px rgba(200, 0, 255, 0.25);
   backdrop-filter: blur(8px);
 }

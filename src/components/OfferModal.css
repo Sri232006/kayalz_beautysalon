@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
 .offers-modal-overlay {
   position: fixed;
@@ -8,26 +8,25 @@
   width: 100%;
   height: 100%;
 
-  
-  background: url("../assets/bg-salon.jpg")
-    no-repeat center center/cover;
+  /* Background image version (salon theme) */
+  background: url("../assets/bg-salon.jpg") no-repeat center center/cover;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(3px); 
+  backdrop-filter: blur(3px);
   z-index: 999;
 }
 
 /* MODAL BOX */
 .offers-modal {
-  background: rgba(255, 255, 255, 0.15); 
+  background: rgba(158, 50, 147, 0.35); /* glass effect */
   padding: 20px;
   width: 90%;
   max-width: 380px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);
   text-align: center;
   animation: pop 0.3s ease-in-out;
@@ -35,18 +34,24 @@
 
 /* Animation */
 @keyframes pop {
-  from { transform: scale(0.8); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* TITLE */
 .offer-title {
-  font-family: 'Cinzel', serif;
+  font-family: "Michroma", sans-serif;
   font-size: 26px;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  color: white;
 }
-
 
 /* OFFERS LIST */
 .offers-list {
@@ -56,7 +61,7 @@
 }
 
 .offer-card {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(62, 5, 60, 0.92);
   padding: 12px;
   border-radius: 14px;
   border-left: 5px solid #ffcc00;
@@ -68,7 +73,7 @@
   font-size: 16px;
   margin: 0;
   font-weight: 600;
-  text-shadow: 0px 0px 2px black;
+  text-shadow: 0 0 2px black;
 }
 
 .offer-price {
@@ -76,7 +81,7 @@
   font-weight: bold;
   color: #ffdf5d;
   margin-top: 5px;
-  text-shadow: 0px 0px 2px black;
+  text-shadow: 0 0 2px black;
 }
 
 /* CLOSE BUTTON */
@@ -90,7 +95,7 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .close-btn:hover {

@@ -1,30 +1,143 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Michroma&display=swap');
 
-/* ------------ Dashboard Page ------------ */
+/* ------------ Homepage Page ------------ */
 .dashboard-page {
   background: 
-    linear-gradient(to bottom, rgba(75, 0, 120, 0.75), rgba(34, 0, 74, 0.85)),
-    url("../assets/bg-salon.jpg") no-repeat center center/cover;
+    linear-gradient(to bottom,#3d025d,#3E0B5E,#36095C,#280659);
   min-height: 100vh;
   padding: 20px;
   color: white;
   font-family: 'Michroma', sans-serif;
 }
+/* ================= HAMBURGER MENU ================= */
+.login-btn{
+  width: fit-content;
+  cursor: pointer;
+  position: absolute;
+  background: linear-gradient(to right, #ff4fcb, #a84fff);
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* Hamburger icon */
+.hamburger {
+  width: 35px;
+  height: 28px;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1200;
+  position: fixed;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #ff9bf9;
+  margin: 6px 0;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+
+/* Animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===== Top Navigation ===== */
+.top-nav {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(85, 0, 150, 0.97),
+    rgba(40, 0, 80, 0.97)
+  );
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.top-nav.open {
+  top: 0;
+}
+
+.top-nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.top-nav li {
+  font-size: 22px;
+  margin: 18px 0;
+  cursor: pointer;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.top-nav li:hover {
+  color: #ff6adf;
+  transform: scale(1.05);
+}
+
+/* Admin button highlight */
+.admin-btn {
+  background: linear-gradient(to right, #ff4fcb, #a84fff);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Overlay behind menu */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+}
+
+/* Desktop tweak */
+@media (min-width: 768px) {
+  .top-nav {
+    height: 50vh;
+  }
+}
 
 /* -------- Header Main Updated -------- */
 .header-main {
-  display: flex;
-  justify-content: flex-end;     
+  display: flex;    
   align-items: center;
   position: relative;
 }
 
 /* ---- Brand Logo  ---- */
+.logo-container{
+  margin: auto;
+}
 .brand-logo {
-  width: 800px;
-  display: block;
-  margin: 40px auto 10px auto;     
+  width: 270px; 
   filter: drop-shadow(0 0 12px #ff9bf9);
 }
 
@@ -56,16 +169,16 @@
 /* -------- Tagline  -------- */
 .tagline {
   text-align: center;
-  margin-top: 30px;      
-  font-size: 38px; 
-  line-height: 50px;
+  margin-top: 50px;      
+  font-size: 42px; 
+  line-height: 70px;
   font-weight: 600;
-  letter-spacing: 3px;
-  font-family: 'Cinzel', serif;
+  letter-spacing: 5px;
+  font-family: 'Cinzel';
 }
 
 .tagline span {
-  color: #ff4fcb;
+  color: #ff00b3;
   font-weight: 700;
 }
 
@@ -74,15 +187,21 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 35px;                       
-  margin-top: 20px;
+  margin: 50px;
 }
 
 .feature-card {
-  background: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.249);
   padding: 28px;
   border-radius: 18px;
   text-align: center;
   box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+.feature-card:hover{
+  
+  box-shadow: 0 20px 20px 20px rgba(214, 83, 214, 0.4);
+  transform: scale(1.02);
+  transition: 0.3s;
 }
 
 .icon-img {
@@ -167,4 +286,18 @@
 
 .worker-btn:hover {
   transform: scale(1.05);
+}
+
+
+
+/* ===== OFFERS ===== */
+.offer-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.offer-list li {
+  margin: 12px 0;
+  font-size: 16px;
 }
