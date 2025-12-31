@@ -1,5 +1,5 @@
 import React from "react";
-import "./EmployeeOverview.css";
+import "./AdminDashboard.css";
 
 function EmployeeOverview() {
   const employees = [
@@ -10,8 +10,7 @@ function EmployeeOverview() {
       customersToday: 8,
       customersWeek: 18,
       ranking: 100,
-      image:
-        "https://cdn-icons-png.flaticon.com/512/2922/2922561.png",
+      image: "https://cdn-icons-png.flaticon.com/512/2922/2922561.png",
     },
     {
       name: "Jessica",
@@ -20,8 +19,7 @@ function EmployeeOverview() {
       customersToday: 6,
       customersWeek: 15,
       ranking: 67,
-      image:
-        "https://cdn-icons-png.flaticon.com/512/2922/2922510.png",
+      image: "https://cdn-icons-png.flaticon.com/512/2922/2922510.png",
     },
     {
       name: "Amanda",
@@ -30,8 +28,7 @@ function EmployeeOverview() {
       customersToday: 5,
       customersWeek: 12,
       ranking: 33,
-      image:
-        "https://cdn-icons-png.flaticon.com/512/2922/2922688.png",
+      image: "https://cdn-icons-png.flaticon.com/512/2922/2922688.png",
     },
   ];
 
@@ -41,45 +38,41 @@ function EmployeeOverview() {
 
       <div className="employee-grid">
         {employees.map((emp, index) => (
-          <div className="employee-card" key={index}>
-            <div className="emp-header">
-              <img src={emp.image} alt={emp.name} className="emp-img" />
-              <div>
-                <h3>{emp.name}</h3>
-                <p>{emp.role}</p>
-              </div>
+          <div className="employee-card glass-card" key={index}>
 
-              <span
-                className={
-                  emp.status === "Available"
-                    ? "status available"
-                    : "status busy"
-                }
-              >
-                {emp.status}
-              </span>
-            </div>
+            {/* STATUS */}
+            <span
+              className={`status-badge ${
+                emp.status === "Available" ? "available" : "busy"
+              }`}
+            >
+              {emp.status}
+            </span>
 
+            {/* PROFILE */}
+            <img src={emp.image} alt={emp.name} className="emp-img" />
+
+            <h3 className="emp-name">{emp.name}</h3>
+            <p className="emp-role">{emp.role}</p>
+
+            {/* STATS */}
             <div className="stats">
-              <p>
-                📊 Customers Today: <span>{emp.customersToday}</span>
-              </p>
-              <p>
-                📈 This Week: <span>{emp.customersWeek}</span>
-              </p>
+              <p>Customers Today <span>{emp.customersToday}</span></p>
+              <p>This Week <span>{emp.customersWeek}</span></p>
             </div>
 
-            <div className="ranking">
-              <p>
-                Ranking #{index + 1} – {emp.ranking}%
-              </p>
-              <div className="progress-bar">
-                <div
-                  className="progress"
-                  style={{ width: `${emp.ranking}%` }}
-                ></div>
-              </div>
+            {/* RANK */}
+            <p className="rank-text">
+              Ranking #{index + 1} – {emp.ranking}%
+            </p>
+
+            <div className="progress-bar">
+              <div
+                className="progress"
+                style={{ width: `${emp.ranking}%` }}
+              />
             </div>
+
           </div>
         ))}
       </div>

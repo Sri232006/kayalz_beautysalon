@@ -1,5 +1,5 @@
 import React from "react";
-import "./ServiceTransactions.css";
+import "./AdminDashboard.css";
 
 const ServiceTransactions = () => {
   const logs = [

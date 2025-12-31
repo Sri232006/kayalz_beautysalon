@@ -1,7 +1,11 @@
 import React from "react";
 import kayalzLogo from "../assets/kayalzlogo.png";
 import "./AdminDashboard.css";
-import AdminOptionSlider from "./AdminOptionSlider";
+
+// 🔽 Import sub sections
+import AnalyticsPage from "./AnalyticsPage";
+import EmployeeOverview from "./EmployeeOverview";
+import ServiceTransactions from "./ServiceTransactions";
 
 const AdminDashboard = () => {
   return (
@@ -9,7 +13,6 @@ const AdminDashboard = () => {
 
       {/* ===== TOP HEADER ===== */}
       <div className="top-header">
-        {/* LEFT LOGO */}
         <div className="left-brand">
           <img
             src={kayalzLogo}
@@ -17,16 +20,11 @@ const AdminDashboard = () => {
             className="brand-logo-big"
           />
         </div>
-
-        {/* RIGHT AREA (future: search / notification / settings) */}
         <div className="right-actions"></div>
       </div>
 
       {/* ===== ADMIN DASHBOARD TITLE ===== */}
       <h1 className="admin-title">Admin Dashboard</h1>
-
-      {/* ===== SLIDER OPTIONS ===== */}
-      <AdminOptionSlider />
 
       {/* ===== DASHBOARD OVERVIEW ===== */}
       <h2 className="section-title">Dashboard Overview</h2>
@@ -79,6 +77,19 @@ const AdminDashboard = () => {
           <h1 className="card-value">5</h1>
           <p className="card-footer red">↓ 0% vs last period</p>
         </div>
+      </div>
+
+      {/* ===== SCROLL DOWN SECTIONS ===== */}
+      <div className="dashboard-section">
+        <AnalyticsPage />
+      </div>
+
+      <div className="dashboard-section">
+        <EmployeeOverview />
+      </div>
+
+      <div className="dashboard-section">
+        <ServiceTransactions />
       </div>
 
     </div>
