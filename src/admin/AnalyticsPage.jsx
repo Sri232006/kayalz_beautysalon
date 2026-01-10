@@ -1,6 +1,6 @@
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, BarChart, Bar } from "recharts";
-import "./AnalyticsPage.css";
+import "./AdminDashboard.css";
 
 const peakHours = [
   { time: "08:00", count: 2 },
