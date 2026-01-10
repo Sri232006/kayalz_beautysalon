@@ -1,40 +1,83 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import googleLogo from "../assets/g_logo1.jpg";
+import { GoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
-    if (email && password) {
-      if (email === "admin@gmail.com" && password === "123456") {
-        localStorage.setItem("role", "admin");
-        localStorage.setItem("auth", "true");
-        navigate("/admin/dashboard");  
-      } else {
-        localStorage.setItem("role", "user");
-        localStorage.setItem("auth", "true");
-        navigate("/Homepage");        
-      }
-    } else {
+  // 🔐 Save auth data in ONE place
+  const saveAuth = (token, user) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("role", user.role);
+    localStorage.setItem("userId", user.id);
+    localStorage.setItem("email", user.email);
+  };
+
+  // ================= NORMAL LOGIN =================
+  const handleLogin = async () => {
+    if (!email || !password) {
       alert("Please enter Email & Password");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await axios.post(
+        "http://localhost:5000/api/users/login",
+        { email, password }
+      );
+
+      const { token, user } = res.data;
+      saveAuth(token, user);
+
+      navigate(user.role === "admin" ? "/admin/dashboard" : "/Homepage");
+    } catch (error) {
+      alert(error.response?.data?.message || "Login failed");
+    } finally {
+      setLoading(false);
     }
   };
 
+
   return (
     <div className="login-container">
-
       <div className="login-box">
         <h2 className="title">SIGN IN</h2>
 
-        <button className="google-btn" onClick={() => alert('Google login coming soon!')}>
-  <img src={googleLogo} alt="google" />
-  Continue with Google
-</button>
+        <GoogleLogin
+  useOneTap={false}
+  onSuccess={async (credentialResponse) => {
+    if (!credentialResponse?.credential) {
+      alert("Google did not return token. Please try again.");
+      return;
+    }
+
+    const res = await axios.post(
+      "http://localhost:5000/api/users/google",
+      { token: credentialResponse.credential },
+      { headers: { "Content-Type": "application/json" } }
+    );
+
+    const { token, user } = res.data;
+
+    localStorage.setItem("token", token);
+    localStorage.setItem("role", user.role);
+    localStorage.setItem("userId", user.id);
+    localStorage.setItem("email", user.email);
+
+    navigate("/Homepage");
+  }}
+  onError={() => alert("Google Login Failed")}
+/>
+
+
+
 
         <p className="or">or</p>
 
@@ -56,8 +99,8 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="sign-btn" onClick={handleLogin}>
-          Log in
+        <button className="sign-btn" onClick={handleLogin} disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
         </button>
       </div>
     </div>
